@@ -1,11 +1,25 @@
 <?php
 
-namespace APP\Http\Controllers;
+namespace App\Http\Controllers;
 
-class SeriesController
+use Illuminate\Http\Request;
+
+class SeriesController extends Controller
 {
-    public function listarSeries()
+    public function index()
     {
-        
+        $series = [
+            'Dragon Ball Z',
+            'Bleach',
+            'Cavaleiros do zoodiaco'
+        ];
+
+        $html = '<ul>';
+        foreach ($series as $serie) {
+            $html .= "<li>$serie</li>";
+        }
+        $html .= "</ul>";
+
+        echo $html;
     }
 }
